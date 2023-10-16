@@ -13,6 +13,7 @@ public class FileKV implements KeyValueStorage {
     public FileKV(String filePath, Map<String, String> map) {
         this.filePath = filePath;
         this.map = map;
+        Utils.writeFile(filePath, Utils.serialize(map));
     }
 
     @Override
